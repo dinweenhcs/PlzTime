@@ -11,8 +11,8 @@ using UIKit;
 
 namespace PlzTime
 {
-    [Register ("TimeViewController")]
-    partial class TimeViewController
+    [Register ("ParticipantDetailViewController")]
+    partial class ParticipantDetailViewController
     {
         void ReleaseDesignerOutlets ()
         {

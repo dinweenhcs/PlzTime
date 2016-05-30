@@ -11,8 +11,8 @@ using UIKit;
 
 namespace PlzTime
 {
-    [Register ("PersonSplitViewController")]
-    partial class PersonSplitViewController
+    [Register ("MainViewController")]
+    partial class MainViewController
     {
         void ReleaseDesignerOutlets ()
         {

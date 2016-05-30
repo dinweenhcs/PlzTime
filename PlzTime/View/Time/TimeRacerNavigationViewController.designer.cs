@@ -11,8 +11,8 @@ using UIKit;
 
 namespace PlzTime
 {
-    [Register ("SysViewController")]
-    partial class SysViewController
+    [Register ("TimeRacerNavigationViewController")]
+    partial class TimeRacerNavigationViewController
     {
         void ReleaseDesignerOutlets ()
         {

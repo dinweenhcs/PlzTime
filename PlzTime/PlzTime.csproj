@@ -102,6 +102,9 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="View\" />
+    <Folder Include="View\Time\" />
+    <Folder Include="View\Main\" />
+    <Folder Include="View\Participant\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -114,17 +117,37 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="View\PersonSplitViewController.cs" />
-    <Compile Include="View\PersonSplitViewController.designer.cs">
-      <DependentUpon>PersonSplitViewController.cs</DependentUpon>
+    <Compile Include="View\Time\TimeRacerNavigationViewController.cs" />
+    <Compile Include="View\Time\TimeRacerNavigationViewController.designer.cs">
+      <DependentUpon>TimeRacerNavigationViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SysViewController.cs" />
-    <Compile Include="View\SysViewController.designer.cs">
-      <DependentUpon>SysViewController.cs</DependentUpon>
+    <Compile Include="View\Time\TimeRacerTableViewController.cs" />
+    <Compile Include="View\Time\TimeRacerTableViewController.designer.cs">
+      <DependentUpon>TimeRacerTableViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TimeViewController.cs" />
-    <Compile Include="View\TimeViewController.designer.cs">
+    <Compile Include="View\Time\TimeViewController.cs" />
+    <Compile Include="View\Time\TimeViewController.designer.cs">
       <DependentUpon>TimeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\MainViewController.cs" />
+    <Compile Include="View\Main\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Participant\ParticipantSplitViewController.cs" />
+    <Compile Include="View\Participant\ParticipantSplitViewController.designer.cs">
+      <DependentUpon>ParticipantSplitViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Participant\ParticipantDetailViewController.cs" />
+    <Compile Include="View\Participant\ParticipantDetailViewController.designer.cs">
+      <DependentUpon>ParticipantDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Participant\ParticipantMasterTableViewController.cs" />
+    <Compile Include="View\Participant\ParticipantMasterTableViewController.designer.cs">
+      <DependentUpon>ParticipantMasterTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Participant\ParticipantMasterNavigationController.cs" />
+    <Compile Include="View\Participant\ParticipantMasterNavigationController.designer.cs">
+      <DependentUpon>ParticipantMasterNavigationController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
