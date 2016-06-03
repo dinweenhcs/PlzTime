@@ -19,6 +19,9 @@ namespace PlzTime
 		#region "### Constructors #############################################"
 		public SQLiteDatabase(string databaseName, string applicationSupportFolder)
 		{
+			this._databaseName = databaseName;
+			this._applicationSupportFolder = applicationSupportFolder;
+
 			if (!verifySQLiteDatabase())
 			{
 				Console.WriteLine("SQLiteDatabase::SQLiteDatabase(): SQLiteDatabase doesn't exist or is corrupt -> initSQLiteDatabase()");
