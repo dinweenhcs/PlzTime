@@ -15,11 +15,166 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="730" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="299" y="100" width="200" height="30"/>
+                                <state key="normal" title="Datenbank zurücksetzen!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="733" firstItem="730" firstAttribute="width" constant="200"/>
+                                    <constraint id="734" firstItem="730" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="735" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="284" y="160" width="200" height="30"/>
+                                <state key="normal" title="Plauschzeitfahrer laden...">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="737" firstItem="735" firstAttribute="height" constant="30"/>
+                                    <constraint id="739" firstItem="735" firstAttribute="width" constant="200"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="UIButton735_TouchUpInside:" destination="9pv-A4-QxB" id="795" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="740">
+                                <rect key="frame" x="484" y="165" width="20" height="20"/>
+                                <constraints>
+                                    <constraint id="743" firstItem="740" firstAttribute="height" constant="20"/>
+                                    <constraint id="744" firstItem="740" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl geladene Teilnehmer: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="745" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="234" y="190" width="300" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="747" firstItem="745" firstAttribute="width" constant="300"/>
+                                    <constraint id="748" firstItem="745" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl neue Teilnehmer: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="750" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="234" y="211" width="300" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="751" firstItem="750" firstAttribute="width" constant="300"/>
+                                    <constraint id="752" firstItem="750" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl Mutationen: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="757" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="234" y="232" width="300" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="758" firstItem="757" firstAttribute="width" constant="300"/>
+                                    <constraint id="759" firstItem="757" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="762" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="284" y="323" width="200" height="30"/>
+                                <state key="normal" title="Plauschzeitfahren laden...">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="764" firstItem="762" firstAttribute="height" constant="30"/>
+                                    <constraint id="767" firstItem="762" firstAttribute="width" constant="200"/>
+                                </constraints>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="768">
+                                <rect key="frame" x="484" y="328" width="20" height="20"/>
+                                <constraints>
+                                    <constraint id="769" firstItem="768" firstAttribute="height" constant="20"/>
+                                    <constraint id="770" firstItem="768" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <pickerView contentMode="scaleToFill" id="773" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="184" y="353" width="400" height="100"/>
+                                <constraints>
+                                    <constraint id="776" firstItem="773" firstAttribute="height" constant="100"/>
+                                    <constraint id="777" firstItem="773" firstAttribute="width" constant="400"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="778" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="209" y="253" width="150" height="30"/>
+                                <state key="normal" title="zurücksetzen">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="782" firstItem="778" firstAttribute="width" constant="150"/>
+                                    <constraint id="783" firstItem="778" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="779" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="409" y="253" width="150" height="30"/>
+                                <state key="normal" title="veröffentlichen">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton779_TouchUpInside:" destination="9pv-A4-QxB" id="780" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="787" firstItem="779" firstAttribute="width" constant="150"/>
+                                    <constraint id="788" firstItem="779" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="790">
+                                <rect key="frame" x="559" y="258" width="20" height="20"/>
+                                <constraints>
+                                    <constraint id="791" firstItem="790" firstAttribute="height" constant="20"/>
+                                    <constraint id="792" firstItem="790" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint id="731" firstItem="730" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="100"/>
+                            <constraint id="732" firstItem="730" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="15"/>
+                            <constraint id="736" firstItem="735" firstAttribute="top" secondItem="730" secondAttribute="bottom" constant="30"/>
+                            <constraint id="738" firstItem="735" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX"/>
+                            <constraint id="741" firstItem="740" firstAttribute="centerY" secondItem="735" secondAttribute="centerY"/>
+                            <constraint id="742" firstItem="740" firstAttribute="trailing" secondItem="735" secondAttribute="centerX" constant="120"/>
+                            <constraint id="746" firstItem="tsR-hK-woN" firstAttribute="centerX" secondItem="745" secondAttribute="centerX"/>
+                            <constraint id="749" firstItem="745" firstAttribute="top" secondItem="735" secondAttribute="bottom"/>
+                            <constraint id="753" firstItem="750" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX"/>
+                            <constraint id="756" firstItem="750" firstAttribute="top" secondItem="745" secondAttribute="bottom"/>
+                            <constraint id="760" firstItem="757" firstAttribute="top" secondItem="750" secondAttribute="bottom"/>
+                            <constraint id="761" firstItem="757" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX"/>
+                            <constraint id="765" firstItem="tsR-hK-woN" firstAttribute="centerX" secondItem="762" secondAttribute="centerX"/>
+                            <constraint id="771" firstItem="768" firstAttribute="centerY" secondItem="762" secondAttribute="centerY"/>
+                            <constraint id="772" firstItem="768" firstAttribute="leading" secondItem="762" secondAttribute="trailing"/>
+                            <constraint id="774" firstItem="773" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX"/>
+                            <constraint id="775" firstItem="773" firstAttribute="top" secondItem="762" secondAttribute="bottom"/>
+                            <constraint id="781" firstItem="tsR-hK-woN" firstAttribute="centerX" secondItem="778" secondAttribute="centerX" constant="100"/>
+                            <constraint id="784" firstItem="757" firstAttribute="bottom" secondItem="778" secondAttribute="top"/>
+                            <constraint id="785" firstItem="779" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="100"/>
+                            <constraint id="786" firstItem="779" firstAttribute="top" secondItem="757" secondAttribute="bottom"/>
+                            <constraint id="789" firstItem="762" firstAttribute="top" secondItem="757" secondAttribute="bottom" constant="70"/>
+                            <constraint id="793" firstItem="790" firstAttribute="centerY" secondItem="779" secondAttribute="centerY"/>
+                            <constraint id="794" firstItem="790" firstAttribute="leading" secondItem="779" secondAttribute="trailing"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="acW-dT-cKf" title="Zentrale"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnLoadParticipants" destination="735" id="name-outlet-735"/>
+                        <outlet property="lbParticipantCountLoaded" destination="745" id="name-outlet-745"/>
+                        <outlet property="lbParticpantCountCreated" destination="750" id="name-outlet-750"/>
+                        <outlet property="lbParticpantCountModified" destination="757" id="name-outlet-757"/>
+                        <outlet property="btnResetDatabase" destination="730" id="name-outlet-730"/>
+                        <outlet property="btnTuncateTableParticipant" destination="778" id="name-outlet-778"/>
+                        <outlet property="btnUploadParticipants" destination="779" id="name-outlet-779"/>
+                        <outlet property="picPlzRace" destination="773" id="name-outlet-773"/>
+                        <outlet property="btnLoadPlzRaces" destination="762" id="name-outlet-762"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,9 +209,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="512" height="44"/>
                                     <items>
                                         <navigationItem title="Teilnehmer" id="82">
-                                            <barButtonItem key="rightBarButtonItem" id="83" systemItem="add">
+                                            <barButtonItem key="rightBarButtonItem" id="885" systemItem="add">
                                                 <connections>
-                                                    <segue id="457" destination="403" kind="modal"/>
+                                                    <segue id="927" destination="403" kind="modal"/>
                                                 </connections>
                                             </barButtonItem>
                                         </navigationItem>
@@ -66,7 +221,7 @@
                             <view contentMode="scaleToFill" id="563" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="59" width="768" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99.99" lineBreakMode="tailTruncation" minimumFontSize="10" id="578" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="999:99" lineBreakMode="tailTruncation" minimumFontSize="10" id="578" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
                                         <rect key="frame" x="234" y="30" width="300" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="70"/>
@@ -98,9 +253,7 @@
                                             <constraint id="613" firstItem="580" firstAttribute="width" constant="80"/>
                                             <constraint id="614" firstItem="580" firstAttribute="height" constant="80"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="UIButton580_TouchUpInside:" destination="8rJ-Kc-sve" id="615" eventType="touchUpInside"/>
-                                        </connections>
+                                        <connections/>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lock" lineBreakMode="tailTruncation" minimumFontSize="10" id="581" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="right">
                                         <rect key="frame" x="612" y="64.5" width="45" height="21"/>
@@ -165,7 +318,7 @@
                                     <view contentMode="scaleToFill" id="702" translatesAutoresizingMaskIntoConstraints="NO">
                                         <rect key="frame" x="5" y="25" width="645" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="999.99" lineBreakMode="tailTruncation" minimumFontSize="10" id="631" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="right">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="999:99" lineBreakMode="tailTruncation" minimumFontSize="10" id="631" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="right">
                                                 <rect key="frame" x="187.5" y="15" width="120" height="40"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
@@ -279,6 +432,14 @@
                         <outlet property="ClockStoredView" destination="616" id="name-outlet-616"/>
                         <outlet property="VerticalSeparatorView" destination="676" id="name-outlet-676"/>
                         <outlet property="HorizontalSeparatorView" destination="680" id="name-outlet-680"/>
+                        <outlet property="btnStartStopwatch" destination="580" id="name-outlet-580"/>
+                        <outlet property="btnSplit" destination="621" id="name-outlet-621"/>
+                        <outlet property="lbStopwatch" destination="578" id="name-outlet-578"/>
+                        <outlet property="lbClock" destination="579" id="name-outlet-579"/>
+                        <outlet property="lbStopwatchSplit" destination="631" id="name-outlet-631"/>
+                        <outlet property="lbClockSplit" destination="714" id="name-outlet-714"/>
+                        <outlet property="swtLockStartStopwatch" destination="584" id="name-outlet-584"/>
+                        <outlet property="btnAddNewRacer" destination="885" id="name-outlet-885"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -419,7 +580,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Teilnehmer" id="539">
+                    <navigationItem key="navigationItem" title="Plauschzeitfahrer" id="539">
                         <barButtonItem key="rightBarButtonItem" id="560" systemItem="add"/>
                     </navigationItem>
                 </viewController>

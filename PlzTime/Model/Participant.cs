@@ -1,17 +1,26 @@
-﻿using System;
+﻿#region "Internal Libraries"
+using System;
+using System.Collections.Generic;
+using System.Linq;
+#endregion
+#region "Importet Libraries"
 using SQLite;
+#endregion
 
-namespace PlauschzeitfahrenTMS
+namespace PlzTime
 {
 	[Table("Participant")]
 	public class Participant
 	{
+		#region "### Properties #############################################"
 		[PrimaryKey, AutoIncrement, Column("ID")]
 		private int ID { get; set; }
 		[Column("creatmin_ts")]
 		private DateTime creation { get; set; }
 		[Column("modification_ts")]
 		private DateTime modification { get; set; }
+		[Column("downloaded_ts")]
+		private DateTime downloaded_ts { get; set; }
 		[Indexed, NotNull]
 		public int plz_ID { get; set; }
 		public string gender { get; set; }
@@ -30,12 +39,17 @@ namespace PlauschzeitfahrenTMS
 		public string mobile { get; set; }
 		public string mail { get; set; }
 
-		public Participant(){
+
+		#endregion
+
+		#region "### Constructors #############################################"
+		public Participant()
+		{
 			this.creation = DateTime.UtcNow;
 			this.modification = DateTime.UtcNow;
 		}
-
-		public Participant(bool p_test){
+		public Participant(bool p_test)
+		{
 			if (p_test)
 			{
 				this.creation = DateTime.UtcNow;
@@ -57,6 +71,37 @@ namespace PlauschzeitfahrenTMS
 				this.mail = "toto@mac.com";
 			}
 		}
+		#endregion
+
+
+		#region "### Private Methods #############################################"
+		#endregion
+		#region "### Public Methods #############################################"
+		public int createTable(ref SQLiteConnection dbConnection)
+		{
+			try
+			{
+				return dbConnection.CreateTable<Participant>();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("ERROR DatabaseSQLite::getParticipantsOfRace(): " + ex.ToString());
+				return -1;
+			}
+		}
+		public List<Participant> getParticipantsOfRace(ref SQLiteConnection dbConnection)
+		{
+			try
+			{
+				return dbConnection.Table<Participant>().ToList(); // Dangerous if list is big!
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("ERROR DatabaseSQLite::getParticipantsOfRace(): " + ex.ToString());
+				return null;
+			}
+		}
+		#endregion
 	}
 }
 

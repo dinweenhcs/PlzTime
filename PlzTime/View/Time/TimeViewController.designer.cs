@@ -16,6 +16,18 @@ namespace PlzTime
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnAddNewRacer { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSplit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnStartStopwatch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView ClockStoredView { get; set; }
 
         [Outlet]
@@ -28,14 +40,45 @@ namespace PlzTime
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView VerticalSeparatorView { get; set; }
+        UIKit.UILabel lbClock { get; set; }
 
-        [Action ("UIButton580_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton580_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UILabel lbClockSplit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lbStopwatch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lbStopwatchSplit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch swtLockStartStopwatch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView VerticalSeparatorView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnAddNewRacer != null) {
+                btnAddNewRacer.Dispose ();
+                btnAddNewRacer = null;
+            }
+
+            if (btnSplit != null) {
+                btnSplit.Dispose ();
+                btnSplit = null;
+            }
+
+            if (btnStartStopwatch != null) {
+                btnStartStopwatch.Dispose ();
+                btnStartStopwatch = null;
+            }
+
             if (ClockStoredView != null) {
                 ClockStoredView.Dispose ();
                 ClockStoredView = null;
@@ -49,6 +92,31 @@ namespace PlzTime
             if (HorizontalSeparatorView != null) {
                 HorizontalSeparatorView.Dispose ();
                 HorizontalSeparatorView = null;
+            }
+
+            if (lbClock != null) {
+                lbClock.Dispose ();
+                lbClock = null;
+            }
+
+            if (lbClockSplit != null) {
+                lbClockSplit.Dispose ();
+                lbClockSplit = null;
+            }
+
+            if (lbStopwatch != null) {
+                lbStopwatch.Dispose ();
+                lbStopwatch = null;
+            }
+
+            if (lbStopwatchSplit != null) {
+                lbStopwatchSplit.Dispose ();
+                lbStopwatchSplit = null;
+            }
+
+            if (swtLockStartStopwatch != null) {
+                swtLockStartStopwatch.Dispose ();
+                swtLockStartStopwatch = null;
             }
 
             if (VerticalSeparatorView != null) {
