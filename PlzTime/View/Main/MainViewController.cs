@@ -2,18 +2,32 @@ using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
+using System.Threading;
+using System.Runtime.CompilerServices;
 
 namespace PlzTime
 {
 	public partial class MainViewController : UIViewController
 	{
 		#region "### Properties #################################################"
+		private static string applicationName = NSBundle.MainBundle.InfoDictionary["CFBundleName"] + "";
+		/*
+		* 20 Keys : NSBundleResolvedPath ,CFBundleVersion ,NSBundleInitialPath, 
+		* CFBundleIdentifier ,NSMainNibFile ,CFBundleIconFile ,CFBundleInfoPlistURL, 
+		* CFBundleExecutable ,DTSDKName ,UIStatusBarStyle ,CFBundleDevelopmentRegion, 
+		* DTPlatformName ,CFBundleInfoDictionaryVersion ,CFBundleSupportedPlatforms, 
+		* CFBundleExecutablePath ,CFBundleDisplayName ,LSRequiresIPhoneOS, 
+		* CFBundlePackageType ,CFBundleSignature ,CFBundleName
+		*/
 		private SQLiteDatabase _database;
+
+		public Thread uiThread;
 		#endregion "#############################################################"
 
 		#region "### Constructors ###############################################"
 		public MainViewController(IntPtr handle) : base(handle)
 		{
+			this.uiThread = Thread.CurrentThread;
 		}
 		#endregion "#############################################################"
 		#region "### Deconstructors #############################################"
@@ -24,19 +38,18 @@ namespace PlzTime
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			Console.WriteLine("MainViewController::ViewDidLoad()");
+			Console.WriteLine($"{applicationName}::MainViewController::ViewDidLoad()");
 
 			// Create new Database
-			this._database = new SQLiteDatabase();
+			this._database = new SQLiteDatabase(applicationName + ".sqllite", applicationName + "");
 			this._database.connect();
 
-			#region "** UI Methods ***********************"
+			#region "-------- UI Methods & Properties -----------------------"
 			this.btnResetDatabase.TouchUpInside += (sender, e) =>
 			{
 				Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): sender={sender}, e={e}");
 				this._database.deleteSQLiteDatabase();
-				this._database = new SQLiteDatabase();
-				Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): Database restored!");
+				this._database = new SQLiteDatabase(applicationName + ".sqllite", applicationName + ""); Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): Database restored!");
 			};
 			this.btnLoadParticipants.TouchUpInside += (sender, e) =>
 			{
@@ -45,7 +58,7 @@ namespace PlzTime
 				participants.Add(new Participant(true));
 				participants.Add(new Participant(true));
 			};
-			#endregion "**********************************"
+			#endregion "-----------------------------------------------------"
 		}
 		public override void ViewWillDisappear(bool animated)
 		{
@@ -61,7 +74,17 @@ namespace PlzTime
 
 			this._database.connect();
 		}
+		#endregion "#############################################################"
 
+		#region "### Event Methods ##############################################"
+		#endregion "#############################################################"
+		#region "### Private Methods ############################################"
+
+		public bool isMainThread => uiThread == Thread.CurrentThread;
+		private void whatThreadIAm([CallerMemberName] string method = "", [CallerLineNumber] int line = 0)
+		{
+			Console.WriteLine($"TimeViewController::{method}(): {line}: MainThread={isMainThread}");
+		}
 		#endregion "#############################################################"
 	}
 }

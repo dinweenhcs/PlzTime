@@ -52,11 +52,6 @@ namespace PlzTime
 		#endregion "#############################################################"
 
 		#region "### Private Methods ############################################"
-		private bool isClassThread => _thread == Thread.CurrentThread;
-		private void whatThreadIAm([CallerMemberName] string method = "", [CallerLineNumber] int line = 0)
-		{
-			Console.WriteLine($"Stopwatch::{method}(): {line}: MainThread={isClassThread}");
-		}
 		private void timerElapsed(object sender, System.Timers.ElapsedEventArgs e)
 		{
 			//this._now = e.SignalTime;
@@ -73,7 +68,7 @@ namespace PlzTime
 				Console.WriteLine($"Stopwatch::timerElapsed():  this.onElapse == null: Error");
 			}
 
-			this.whatThreadIAm();
+			//this.whatThreadIAm();
 		}
 		private TimeSpan calculateDiff => (_start != null) ? (_now - (DateTime)_start) : _diff;
 		//private TimeSpan calculateDiff()  // *** version: long version ***
@@ -84,6 +79,12 @@ namespace PlzTime
 		// { return _diff; }
 		//return (_start != null) ? (_now - (DateTime)_start) : _diff;
 		//}
+
+		private bool isClassThread => _thread == Thread.CurrentThread;
+		private void whatThreadIAm([CallerMemberName] string method = "", [CallerLineNumber] int line = 0)
+		{
+			Console.WriteLine($"Stopwatch::{method}(): {line}: MainThread={isClassThread}");
+		}
 		#endregion "#############################################################"
 		#region "### Public Methods #############################################"
 		public void startElapse()

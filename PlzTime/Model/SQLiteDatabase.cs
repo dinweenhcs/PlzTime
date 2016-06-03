@@ -1,31 +1,23 @@
-﻿#region "Internal Libraries"
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-
-
-#endregion
-#region "Importet Libraries"
 using SQLite;
-#endregion
-
-#region "Own Classes"
-#endregion
 
 namespace PlzTime
 {
 	public class SQLiteDatabase
 	{
 		#region "### Properties #############################################"
-		private static string _dbFilename = "PlzTms.sqlite";
+		private string _databaseName;
+		private string _applicationSupportFolder;
 
 		private string _dbPath;
 		private string _dbFile;
 		public SQLiteConnection _connection;
 		#endregion
 		#region "### Constructors #############################################"
-		public SQLiteDatabase()
+		public SQLiteDatabase(string databaseName, string applicationSupportFolder)
 		{
 			if (!verifySQLiteDatabase())
 			{
@@ -49,7 +41,7 @@ namespace PlzTime
 				string presonalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 				// IOS: Applicationfiles are be deposed in ~/Library/<subfolder>/<files>
 				// 		This is required by Apple!
-				_dbPath = System.IO.Path.Combine(presonalFolder, "..", "Library/Application Support/", "Plauschzeitfahren TMS");
+				_dbPath = System.IO.Path.Combine(presonalFolder, "..", "Library/Application Support/", this._applicationSupportFolder);
 
 				if (!System.IO.Directory.Exists(_dbPath))
 				{
@@ -57,7 +49,7 @@ namespace PlzTime
 				}
 
 				// Create SQLiteDatabase-File...
-				_dbFile = System.IO.Path.Combine(_dbPath, _dbFilename);
+				_dbFile = System.IO.Path.Combine(_dbPath, this._databaseName);
 				Console.WriteLine("SQLiteDatabase::initSQLiteDatabase()._dbFile= " + _dbFile);
 			}
 			catch (Exception ex)

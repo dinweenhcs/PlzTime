@@ -12,6 +12,15 @@ namespace PlzTime
 	{
 
 		#region "### Properties #################################################"
+		private static string applicationName = NSBundle.MainBundle.InfoDictionary["CFBundleName"] + "";
+		/*
+		* 20 Keys : NSBundleResolvedPath ,CFBundleVersion ,NSBundleInitialPath, 
+		* CFBundleIdentifier ,NSMainNibFile ,CFBundleIconFile ,CFBundleInfoPlistURL, 
+		* CFBundleExecutable ,DTSDKName ,UIStatusBarStyle ,CFBundleDevelopmentRegion, 
+		* DTPlatformName ,CFBundleInfoDictionaryVersion ,CFBundleSupportedPlatforms, 
+		* CFBundleExecutablePath ,CFBundleDisplayName ,LSRequiresIPhoneOS, 
+		* CFBundlePackageType ,CFBundleSignature ,CFBundleName
+		*/
 		private SQLiteDatabase _database;
 		private Stopwatch _stopwatch;
 
@@ -34,57 +43,38 @@ namespace PlzTime
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			Console.WriteLine("TimeViewController::ViewDidLoad()");
+			Console.WriteLine($"{applicationName}::TimeViewController::ViewDidLoad()");
 
 
 			// Create new Database
-			this._database = new SQLiteDatabase();
+			this._database = new SQLiteDatabase(applicationName + ".sqllite", applicationName + "");
 			this._database.connect();
 
 
 			// Initialisize Stopwatch
 			this._stopwatch = new Stopwatch(1000);
-			this._stopwatch.onElapse += (source, e) =>
-			{
-				this.whatThreadIAm();
-
-				InvokeOnMainThread(delegate
-				{
-					//this.whatThreadIAm();
-					TimeSpan diff = ((Stopwatch)source).getDiff();
-					if (((Stopwatch)source).getStart() != null)
-					{
-
-						this.lbStopwatch.Text = (int)diff.TotalMinutes + diff.ToString(@"\:ss");
-						//String m = ((int)diff.TotalMinutes).ToString();
-						//m = m.PadLeft(2, '0');
-						//String s = diff.Seconds.ToString();
-						//s = s.PadLeft(2, '0');
-					}
-					else
-					{
-						this.lbStopwatch.Text = "00:00";
-					}
-
-					this.lbClock.Text = DateTime.UtcNow.ToLongTimeString();
-				});
-			};
+			this._stopwatch.onElapse += onStopwatchElapse;
 			this._stopwatch.startElapse();
 
 
 			#region "** UI Methods & Properties ***********************"
 			this.btnStartStopwatch.Layer.CornerRadius = 40;
 			this.btnStartStopwatch.Enabled = true;
-			this.btnStartStopwatch.TouchUpInside += startStopwatch;
+			this.btnStartStopwatch.TouchUpInside += onStartStopwatch;
 
 			this.btnSplit.Layer.CornerRadius = 40;
-			this.btnStartStopwatch.Enabled = false;
-			this.btnSplit.TouchUpInside += splitStopwatch;
+			this.btnSplit.Enabled = false;
+			this.btnSplit.TouchUpInside += onSplitStopwatch;
 
-			this.swtLockStartStopwatch.TouchUpInside += lockStartStopwatch;
+			this.swtLockStartStopwatch.On = true;
+			this.swtLockStartStopwatch.TouchUpInside += onLockStartStopwatch;
 
-			//this.btnAddNewRacer.UserInteractionEnabled = true;
-			//this.btnAddNewRacer = false;
+			this.btnAddNewRacer.Enabled = true;
+
+			this.lbStopwatch.Text = "--:--";
+			this.lbClock.Text = "--:--:--";
+			this.lbStopwatchSplit.Text = "--:--";
+			this.lbClockSplit.Text = "--:--:--";
 			#endregion "***********************************************"
 		}
 		public override void ViewWillDisappear(bool animated)
@@ -103,35 +93,62 @@ namespace PlzTime
 		}
 		#endregion "#############################################################"
 		#region "### Event Methods ##############################################"
-		private void startStopwatch(object sender, EventArgs e)
+		private void onStopwatchElapse(object sender, EventArgs e)
+		{
+			//this.whatThreadIAm();
+			InvokeOnMainThread(delegate
+			{
+				//this.whatThreadIAm();
+				TimeSpan diff = ((Stopwatch)sender).getDiff();
+				if (((Stopwatch)sender).getStart() != null)
+				{
+
+					this.lbStopwatch.Text = (int)diff.TotalMinutes + diff.ToString(@"\:ss");
+					//String m = ((int)diff.TotalMinutes).ToString();
+					//m = m.PadLeft(2, '0');
+					//String s = diff.Seconds.ToString();
+					//s = s.PadLeft(2, '0');
+				}
+				else
+				{
+					this.lbStopwatch.Text = "00:00";
+				}
+
+				this.lbClock.Text = ((Stopwatch)sender).getNow().ToLocalTime().ToLongTimeString();
+			});
+		}
+		private void onStartStopwatch(object sender, EventArgs e)
 		{
 			this._stopwatch.resetAndStart();
+			this.swtLockStartStopwatch.On = false;
+			this.onLockStartStopwatch(this, EventArgs.Empty);
 		}
-		private void splitStopwatch(object sender, EventArgs e)
+		private void onSplitStopwatch(object sender, EventArgs e)
 		{
 
 		}
-		private void lockStartStopwatch(object sender, EventArgs e)
+		private void onLockStartStopwatch(object sender, EventArgs e)
 		{
 			if (swtLockStartStopwatch.On)
 			{
 				this.btnStartStopwatch.Enabled = true;
 				this.btnSplit.Enabled = false;
-				//this.btnAddNewRacer.UserInteractionEnabled = true;
+				this.btnAddNewRacer.Enabled = true;
 			}
 			else {
 				this.btnStartStopwatch.Enabled = false;
 				this.btnSplit.Enabled = true;
-				//this.btnAddNewRacer.UserInteractionEnabled = false;
+				this.btnAddNewRacer.Enabled = false;
 			}
 		}
 		#endregion "#############################################################"
 		#region "### Private Methods ############################################"
+
+		public bool isMainThread => uiThread == Thread.CurrentThread;
 		private void whatThreadIAm([CallerMemberName] string method = "", [CallerLineNumber] int line = 0)
 		{
 			Console.WriteLine($"TimeViewController::{method}(): {line}: MainThread={isMainThread}");
 		}
-		public bool isMainThread => uiThread == Thread.CurrentThread;
 		#endregion "#############################################################"
 	}
 }
