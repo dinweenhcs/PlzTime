@@ -125,6 +125,9 @@ namespace PlzTime
 		}
 		private void onSplitStopwatch(object sender, EventArgs e)
 		{
+			this.lbStopwatchSplit.Text = this.lbStopwatch.Text;
+			this.lbClockSplit.Text = this.lbClockSplit.Text;
+
 
 		}
 		private void onLockStartStopwatch(object sender, EventArgs e)

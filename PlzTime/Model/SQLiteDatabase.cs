@@ -54,6 +54,12 @@ namespace PlzTime
 				// Create SQLiteDatabase-File...
 				_dbFile = System.IO.Path.Combine(_dbPath, this._databaseName);
 				Console.WriteLine("SQLiteDatabase::initSQLiteDatabase()._dbFile= " + _dbFile);
+
+				// Create Database-Structure...
+				this.connect();
+				var result = _connection.CreateTable<Participant>();
+				Console.WriteLine("DatabaseModel::initDatabase().CreateTable<Participants>()= " + result);
+				this.disconnect();
 			}
 			catch (Exception ex)
 			{

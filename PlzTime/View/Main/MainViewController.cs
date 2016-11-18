@@ -49,7 +49,8 @@ namespace PlzTime
 			{
 				Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): sender={sender}, e={e}");
 				this._database.deleteSQLiteDatabase();
-				this._database = new SQLiteDatabase(applicationName + ".sqllite", applicationName + ""); Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): Database restored!");
+				this._database = new SQLiteDatabase(applicationName + ".sqllite", applicationName + "");
+				Console.WriteLine($"MainViewController::ViewDidLoad(btnResetDatabase.TouchUpInside): Database restored!");
 			};
 			this.btnLoadParticipants.TouchUpInside += (sender, e) =>
 			{
@@ -57,7 +58,16 @@ namespace PlzTime
 				participants.Add(new Participant(true));
 				participants.Add(new Participant(true));
 				participants.Add(new Participant(true));
+
+				this._database.connect();
+				foreach (Participant paticipant in participants)
+				{
+					_database._connection.Insert(paticipant);
+				}
+				_database.disconnect();
 			};
+
+
 			#endregion "-----------------------------------------------------"
 		}
 		public override void ViewWillDisappear(bool animated)
@@ -79,7 +89,6 @@ namespace PlzTime
 		#region "### Event Methods ##############################################"
 		#endregion "#############################################################"
 		#region "### Private Methods ############################################"
-
 		public bool isMainThread => uiThread == Thread.CurrentThread;
 		private void whatThreadIAm([CallerMemberName] string method = "", [CallerLineNumber] int line = 0)
 		{

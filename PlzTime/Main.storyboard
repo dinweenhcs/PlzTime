@@ -35,9 +35,7 @@
                                     <constraint id="737" firstItem="735" firstAttribute="height" constant="30"/>
                                     <constraint id="739" firstItem="735" firstAttribute="width" constant="200"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="UIButton735_TouchUpInside:" destination="9pv-A4-QxB" id="795" eventType="touchUpInside"/>
-                                </connections>
+                                <connections/>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="740">
                                 <rect key="frame" x="484" y="165" width="20" height="20"/>
@@ -118,9 +116,7 @@
                                 <state key="normal" title="veröffentlichen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="UIButton779_TouchUpInside:" destination="9pv-A4-QxB" id="780" eventType="touchUpInside"/>
-                                </connections>
+                                <connections/>
                                 <constraints>
                                     <constraint id="787" firstItem="779" firstAttribute="width" constant="150"/>
                                     <constraint id="788" firstItem="779" firstAttribute="height" constant="30"/>

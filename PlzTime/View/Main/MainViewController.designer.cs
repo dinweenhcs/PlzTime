@@ -49,13 +49,6 @@ namespace PlzTime
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView picPlzRace { get; set; }
-        [Action ("UIButton779_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton779_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("UIButton735_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton735_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
