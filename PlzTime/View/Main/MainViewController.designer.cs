@@ -20,11 +20,19 @@ namespace PlzTime
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnLoadParticipantsNew { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnLoadPlzRaces { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnResetDatabase { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnResetDatabaseNew { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -57,6 +65,11 @@ namespace PlzTime
                 btnLoadParticipants = null;
             }
 
+            if (btnLoadParticipantsNew != null) {
+                btnLoadParticipantsNew.Dispose ();
+                btnLoadParticipantsNew = null;
+            }
+
             if (btnLoadPlzRaces != null) {
                 btnLoadPlzRaces.Dispose ();
                 btnLoadPlzRaces = null;
@@ -65,6 +78,11 @@ namespace PlzTime
             if (btnResetDatabase != null) {
                 btnResetDatabase.Dispose ();
                 btnResetDatabase = null;
+            }
+
+            if (btnResetDatabaseNew != null) {
+                btnResetDatabaseNew.Dispose ();
+                btnResetDatabaseNew = null;
             }
 
             if (btnTuncateTableParticipant != null) {

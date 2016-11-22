@@ -144,10 +144,6 @@
     <Compile Include="View\Participant\ParticipantSplitViewController.designer.cs">
       <DependentUpon>ParticipantSplitViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Participant\ParticipantDetailViewController.cs" />
-    <Compile Include="View\Participant\ParticipantDetailViewController.designer.cs">
-      <DependentUpon>ParticipantDetailViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Participant\ParticipantMasterTableViewController.cs" />
     <Compile Include="View\Participant\ParticipantMasterTableViewController.designer.cs">
       <DependentUpon>ParticipantMasterTableViewController.cs</DependentUpon>
@@ -159,6 +155,10 @@
     <Compile Include="Model\SQLiteDatabase.cs" />
     <Compile Include="Model\Participant.cs" />
     <Compile Include="Helper\Stopwatch.cs" />
+    <Compile Include="View\Participant\ParticipantDetailTableViewController.cs" />
+    <Compile Include="View\Participant\ParticipantDetailTableViewController.designer.cs">
+      <DependentUpon>ParticipantDetailTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets" Condition="Exists('..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets')" />

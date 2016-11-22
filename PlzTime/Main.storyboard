@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="730" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="299" y="100" width="200" height="30"/>
+                                <rect key="frame" x="299" y="500" width="200" height="30"/>
                                 <state key="normal" title="Datenbank zurücksetzen!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,7 +27,7 @@
                                 </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="735" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="284" y="160" width="200" height="30"/>
+                                <rect key="frame" x="284" y="560" width="200" height="30"/>
                                 <state key="normal" title="Plauschzeitfahrer laden...">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,14 +38,14 @@
                                 <connections/>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="740">
-                                <rect key="frame" x="484" y="165" width="20" height="20"/>
+                                <rect key="frame" x="484" y="565" width="20" height="20"/>
                                 <constraints>
                                     <constraint id="743" firstItem="740" firstAttribute="height" constant="20"/>
                                     <constraint id="744" firstItem="740" firstAttribute="width" constant="20"/>
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl geladene Teilnehmer: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="745" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="234" y="190" width="300" height="21"/>
+                                <rect key="frame" x="234" y="590" width="300" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl neue Teilnehmer: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="750" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="234" y="211" width="300" height="21"/>
+                                <rect key="frame" x="234" y="611" width="300" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anzahl Mutationen: ..." lineBreakMode="tailTruncation" minimumFontSize="10" id="757" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="234" y="232" width="300" height="21"/>
+                                <rect key="frame" x="234" y="632" width="300" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="762" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="284" y="323" width="200" height="30"/>
+                                <rect key="frame" x="284" y="723" width="200" height="30"/>
                                 <state key="normal" title="Plauschzeitfahren laden...">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -88,21 +88,21 @@
                                 </constraints>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="768">
-                                <rect key="frame" x="484" y="328" width="20" height="20"/>
+                                <rect key="frame" x="484" y="728" width="20" height="20"/>
                                 <constraints>
                                     <constraint id="769" firstItem="768" firstAttribute="height" constant="20"/>
                                     <constraint id="770" firstItem="768" firstAttribute="width" constant="20"/>
                                 </constraints>
                             </activityIndicatorView>
                             <pickerView contentMode="scaleToFill" id="773" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="184" y="353" width="400" height="100"/>
+                                <rect key="frame" x="184" y="753" width="400" height="100"/>
                                 <constraints>
                                     <constraint id="776" firstItem="773" firstAttribute="height" constant="100"/>
                                     <constraint id="777" firstItem="773" firstAttribute="width" constant="400"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="778" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="209" y="253" width="150" height="30"/>
+                                <rect key="frame" x="209" y="653" width="150" height="30"/>
                                 <state key="normal" title="zurücksetzen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -112,7 +112,7 @@
                                 </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="779" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="409" y="253" width="150" height="30"/>
+                                <rect key="frame" x="409" y="653" width="150" height="30"/>
                                 <state key="normal" title="veröffentlichen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -123,16 +123,86 @@
                                 </constraints>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="790">
-                                <rect key="frame" x="559" y="258" width="20" height="20"/>
+                                <rect key="frame" x="559" y="658" width="20" height="20"/>
                                 <constraints>
                                     <constraint id="791" firstItem="790" firstAttribute="height" constant="20"/>
                                     <constraint id="792" firstItem="790" firstAttribute="width" constant="20"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" id="958" translatesAutoresizingMaskIntoConstraints="NO" spacing="25" axis="vertical" distribution="fillEqually">
+                                <rect key="frame" x="50" y="50" width="668" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" id="964" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" spacing="25" distribution="fillEqually">
+                                        <rect key="frame" x="0.0" y="0.0" width="668" height="187.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="966" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="321.5" height="187.5"/>
+                                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                                <state key="normal" title="Datenbank zurücksetzen!">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                <rect key="frame" x="346.5" y="0.0" width="321.5" height="187.5"/>
+                                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
+                                                <state key="normal" title="Resultate veröffentlichen...">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" id="965" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" distribution="fillEqually" spacing="25">
+                                        <rect key="frame" x="0.0" y="212.5" width="668" height="187.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="968" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="321.5" height="187.5"/>
+                                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.6" green="0.4" blue="0.2" alpha="1"/>
+                                                <state key="normal" title="Plauschzeitfahren laden...">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="969" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                <rect key="frame" x="346.5" y="0.0" width="321.5" height="187.5"/>
+                                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
+                                                <state key="normal" title="Plauschzeitfahrer laden...">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="962" firstItem="958" firstAttribute="height" constant="400"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint id="731" firstItem="730" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="100"/>
+                            <constraint id="731" firstItem="730" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="500"/>
                             <constraint id="732" firstItem="730" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="15"/>
                             <constraint id="736" firstItem="735" firstAttribute="top" secondItem="730" secondAttribute="bottom" constant="30"/>
                             <constraint id="738" firstItem="735" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX"/>
@@ -156,6 +226,9 @@
                             <constraint id="789" firstItem="762" firstAttribute="top" secondItem="757" secondAttribute="bottom" constant="70"/>
                             <constraint id="793" firstItem="790" firstAttribute="centerY" secondItem="779" secondAttribute="centerY"/>
                             <constraint id="794" firstItem="790" firstAttribute="leading" secondItem="779" secondAttribute="trailing"/>
+                            <constraint id="959" firstItem="958" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="50"/>
+                            <constraint id="960" firstItem="tsR-hK-woN" firstAttribute="trailing" secondItem="958" secondAttribute="trailing" constant="50"/>
+                            <constraint id="961" firstItem="958" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="50"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="acW-dT-cKf" title="Zentrale"/>
@@ -170,6 +243,8 @@
                         <outlet property="btnUploadParticipants" destination="779" id="name-outlet-779"/>
                         <outlet property="picPlzRace" destination="773" id="name-outlet-773"/>
                         <outlet property="btnLoadPlzRaces" destination="762" id="name-outlet-762"/>
+                        <outlet property="btnResetDatabaseNew" destination="966" id="name-outlet-966"/>
+                        <outlet property="btnLoadParticipantsNew" destination="969" id="name-outlet-969"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -462,31 +537,13 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <scene sceneID="7">
-            <objects>
-                <viewController id="8" sceneMemberID="viewController" customClass="ParticipantDetailViewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5"/>
-                        <viewControllerLayoutGuide type="bottom" id="6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2128" y="2408"/>
-        </scene>
         <scene sceneID="25">
             <objects>
                 <splitViewController id="26" sceneMemberID="viewController" customClass="ParticipantSplitViewController">
                     <toolbarItems/>
                     <connections>
-                        <segue destination="8" kind="relationship" relationship="detailViewController" id="28"/>
                         <segue id="557" destination="533" kind="relationship" relationship="masterViewController"/>
+                        <segue id="1161" destination="1090" kind="relationship" relationship="detailViewController"/>
                     </connections>
                     <tabBarItem key="tabBarItem" id="61" title="Teilnehmer"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -557,32 +614,71 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="535" kind="relationship" relationship="rootViewController" id="534"/>
+                        <segue id="1087" destination="1054" kind="relationship" relationship="rootViewController"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="537" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2123" y="1286"/>
         </scene>
-        <scene sceneID="538">
+        <scene sceneID="1053">
             <objects>
-                <viewController id="535" sceneMemberID="viewController" customClass="ParticipantDetailViewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="530"/>
-                        <viewControllerLayoutGuide type="bottom" id="531"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="540">
+                <tableViewController id="1054" sceneMemberID="viewController" customClass="ParticipantMasterTableViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1055">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Plauschzeitfahrer" id="539">
-                        <barButtonItem key="rightBarButtonItem" id="560" systemItem="add"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1058" rowHeight="44">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1058" id="1059">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1054" id="1056"/>
+                            <outlet property="delegate" destination="1054" id="1057"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem title="Plauschzeitfahrer" id="1086" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="1166" systemItem="add" style="plain" width="40">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="-10" maxY="0.0"/>
+                        </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="541" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1060" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="1284"/>
+            <point key="canvasLocation" x="2541" y="1249"/>
+        </scene>
+        <scene sceneID="1089">
+            <objects>
+                <tableViewController id="1090" sceneMemberID="viewController" customClass="ParticipantDetailTableViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1091">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1094" rowHeight="44">
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1094" id="1095">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1090" id="1092"/>
+                            <outlet property="delegate" destination="1090" id="1093"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1096" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="2531"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
